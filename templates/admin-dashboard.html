@@ -1,0 +1,203 @@
+
+{% load static %}
+{% block content %}   
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
+	<script src="{% static 'styles/js/script.js' %}"></script>
+	<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+
+	<title>AdminHub</title>
+</head>
+<body>
+
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="{%url 'admin-dashboard'%}" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Agent Tango</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="{%url 'admin-dashboard'%}">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			 <li>
+				 <a href="{%url 'view_doctor' %}">
+					<i class='bx bxs-first-aid' ></i>
+					<span class="text">View Doctors</span>
+				</a> 
+			
+			</li> 
+			<li>
+				<a href="{%url 'add_doctor' %}">
+				   <i class='bx bxs-user-plus' ></i>
+				   <span class="text">Add Doctors</span>
+			   </a> 
+		   
+		   </li> 
+			
+			<li>
+				<a href="{%url 'view_patient' %}">
+					<i class='bx bxs-user' ></i>
+					<span class="text">Patients</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'add_patient' %}">
+					<i class='bx bxs-user-plus' ></i>
+					<span class="text">Add Patients</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'view_appointment' %}">
+					<i class='bx bx-notepad' ></i>
+					<span class="text">Appointments</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'add_appointment' %}">
+					<i class='bx bx-notepad' ></i>
+					<span class="text">Add appointments</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="{%url 'logout' %}" class="logout">
+					<i class='bx bxs-log-out' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			
+			<a href="{% url 'admin-page' %}" class="profile">
+				<img src="{% static 'styles/img/people.png' %}">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+
+		<!-- MAIN -->
+		<main>
+			<div class="head-title">
+				<div class="left">
+					<h1>Dashboard</h1>
+					<ul class="breadcrumb">
+						<li>
+							<a href="{%url 'admin-dashboard' %}">Dashboard</a>
+						</li>
+						<li><i class='bx bx-chevron-right' ></i></li>
+						<li>
+							<a class="active"></a>Home</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<ul class="box-info">
+				<li>
+					<i class='bx bxs-calendar-check' ></i>
+					<span class="text">
+						<a href="{%url 'view_appointment' %}">Appointments</a>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+					<a href="{%url 'view_patient' %}">Patients</a>
+					</span>
+				</li>
+				<li>
+					<i class='bx bxs-group' ></i>
+					<span class="text">
+					<a href="{%url 'view_doctor' %}">Doctors</a>
+					</span>
+				</li>
+			</ul>
+
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Recent Appointment</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<table>
+						<thead>
+							<tr>
+								<th>User</th>
+								<th>Date</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<img src="{% static 'styles/img/people.png' %}">
+									<p>Raj</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="{% static 'styles/img/people.png' %}">
+									<p>Rajat</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="{% static 'styles/img/people.png' %}">
+									<p>Manish</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status process">Process</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="{% static 'styles/img/people.png' %}">
+									<p>Utsaha</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status pending">Pending</span></td>
+							</tr>
+							<tr>
+								<td>
+									<img src="{% static 'styles/img/people.png' %}">
+									<p>Parisha</p>
+								</td>
+								<td>01-10-2021</td>
+								<td><span class="status completed">Completed</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+		</main>
+		<!-- MAIN -->
+	</section>
+	<!-- CONTENT -->
+	
+</body>
+</html>
+{% endblock content %}

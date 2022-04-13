@@ -1,0 +1,150 @@
+{% include 'base.html' %}
+
+{% block content %} 
+<section id="contact" class="contact">
+    <div class="container">
+
+      <div class="section-title">
+        <h2 class="text-center">Contact Agent_Tango_Care</h2>
+        <p class="text-center">Ask Us and Send US Queries</p>
+      </div>
+    </div>
+    {% if name %}
+    <center>
+      <h2>Thanks</h2>
+      <p>We received your email</p>
+    </center> 
+    <br/><br/><br/><br/>
+    {% else %}
+    <!--Google map-->
+    <div class="container">
+      <div class="row mt-5">
+    <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=670&amp;height=363&amp;hl=en&amp;q=tahachal &amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.fnfgo.com/">FNF Mods</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:363px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:363px;}.gmap_iframe {height:363px!important;}</style></div>
+
+        <div class="col-lg-4">
+          <div class="info">
+            <div class="address">
+              <h5 class="text-center">ADDRESS</h5> <br>
+              <i class="bi bi-geo-alt"></i>
+              <h4>Location:</h4>
+              <p>Bafal, 13 KTM, NEPAL</p>
+            </div>
+
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>agenttango@gmail.com</p>
+            </div>
+
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>9891232132</p>
+            </div>
+          </div>
+        </div>
+
+        
+         <div class="col-lg-8 mt-5 mt-lg-0">
+          <h3>Contact Agent_Tango_Care</h3>
+             {% comment %} <form method="post" action="/contact">  {% endcomment %}
+            <form action="{% url 'contact' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="phone" class="form-control" name="phone" id="phone">
+            </div>
+            <div class="form-group">
+              <label for="content">Describe your issue:</label>
+              <textarea class="form-control" name="content" id="content" cols="30" rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div> 
+    
+  </section><!-- End Contact Section -->
+  {% endif %}
+
+   <!-- ======= Footer ======= -->
+   <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+  
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Agent_Tango_Care</h3>
+              <p>
+                Bafal, Kathmandu<br>
+                13 KTM, NEPAL<br><br>
+                <strong>Phone:</strong> 9891232132<br>
+                <strong>Email:</strong> agenttangooo@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="https://www.facebook.com/" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://twitter.com/" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="https://skype.com/" class="google-plus"><i class="bx bxl-skype"></i></a>  
+                <a href="https://linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/services">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/doctors">Doctors</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+  
+          <!-- <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Extra Web Course</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Navbar Tutorial</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+  
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+  
+          </div> -->
+  
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright 2021 <strong><span>Agent_Tango_Care</span></strong>. All Rights Reserved
+      </div>
+      </div>
+    </div>
+  </footer><!-- End Footer --> 
+  <div id="preloader"></div>
+  <a href="{% url 'contact' %}" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</body>
+</html>
+{% endblock content %}

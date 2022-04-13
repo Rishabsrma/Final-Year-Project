@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to left top, #4b8ac6, #2c4964)
+    
+}
+
+.container .card {
+    height: 600px;
+    width: 700px;
+    border-radius: 15px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.container .card .form {
+    width: 100%;
+    height: 100%;
+    display: flex
+}
+
+.container .card .left-side {
+    width: 50%;
+    background-color: #fff;
+    height: 100%
+}
+
+.form .left-side .top-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px;
+    position: relative
+}
+
+.form .left-side .top-div h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-weight: 8000
+}
+
+.form .left-side .top-div span {
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: #2c4964;
+    position: absolute;
+    left: 67px;
+    top: 46px
+}
+
+.form .left-side .top-div p {
+    font-size: 14px
+}
+
+.form .left-side .medium-div {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    padding: 20px 45px
+}
+
+.form .left-side .medium-div h1:nth-child(1) {
+    font-size: 40px
+}
+
+.form .left-side .medium-div h1:nth-child(2) {
+    font-weight: 100;
+    font-size: 30px;
+    margin-top: -20px;
+    margin-bottom: 12px
+}
+
+.form .left-side .medium-div p {
+    font-size: 14px
+}
+
+.form .left-side .icons {
+    padding: 15px 45px;
+    font-size: 20px;
+    position: relative
+}
+
+.form .left-side .icons .fa-instagram {
+    position: absolute;
+    right: -80px;
+    top: 23px;
+    transition: all 0.5s
+}
+
+.form .left-side .icons .fa-twitter {
+    position: absolute;
+    right: -60px;
+    top: 23px;
+    transition: all 0.5s;
+    transition-delay: 0.2s
+}
+
+.container .card:hover .icons .fa-instagram {
+    right: 130px
+}
+
+.container .card:hover .icons .fa-twitter {
+    right: 60px
+}
+
+.form .left-side .icons button {
+    height: 30px;
+    width: 100px;
+    background-color: #ff4646;
+    border-radius: 60px;
+    border: none;
+    color: white;
+    transition: all 0.5s
+}
+
+.form .left-side .icons button:hover {
+    background-color: #f10808
+}
+
+.form .left-side .last-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 45px;
+    font-size: 17px;
+    font-weight: 600px
+}
+
+.hexa .hexagonal {
+    position: relative;
+    top: 2px
+}
+
+.hexa .hexagonal small {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1px solid #ccc
+}
+
+.card:hover .hexa .hexagonal small:nth-child(1) {
+    position: absolute;
+    top: 9px;
+    left: -17px;
+    opacity: 1
+}
+
+.card:hover .hexa .hexagonal small:nth-child(2) {
+    position: absolute;
+    top: 2px;
+    left: -25px;
+    opacity: 1
+}
+
+.card:hover .hexa .hexagonal small:nth-child(3) {
+    position: absolute;
+    top: -1px;
+    left: -15px;
+    opacity: 1
+}
+
+.hexa .hexagonal small:nth-child(1) {
+    position: absolute;
+    top: 19px;
+    left: -17px;
+    opacity: 0;
+    transition: all 0.5s
+}
+
+.hexa .hexagonal small:nth-child(2) {
+    position: absolute;
+    top: -12px;
+    left: -35px;
+    opacity: 0;
+    transition: all 0.5s
+}
+
+.hexa .hexagonal small:nth-child(3) {
+    position: absolute;
+    top: -12px;
+    left: -0px;
+    opacity: 0;
+    transition: all 0.5s
+}
+
+.container .card .right-side {
+    width: 50%;
+    background-color: #000;
+    height: 100%;
+    z-index: 10
+}
+
+@media (max-width:750px) {
+    .container .card {
+        max-width: 350px
+    }
+
+    .container .card .right-side {
+        display: none
+    }
+
+    .container .card .left-side {
+        width: 100%
+    }
+}
+
+

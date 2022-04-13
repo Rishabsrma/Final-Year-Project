@@ -1,0 +1,128 @@
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+{% block content %}
+{% load static %}
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
+<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+<script src="{% static 'styles/js/script.js' %}"></script>
+ {% comment %} {% ifequal error "no" %} 
+<script>
+    alert('Record saved successfully');
+    window.location = "{% url 'view_doctor' %}";
+</script>
+{% endifequal %}
+
+{% ifequal error "yes" %} 
+<script>
+    alert('Invalid login try again ');
+</script>
+{% endifequal %}          {% endcomment %}
+
+	<!-- SIDEBAR -->
+	<section id="sidebar">
+		<a href="{%url 'admin-dashboard'%}" class="brand">
+			<i class='bx bxs-smile'></i>
+			<span class="text">Agent Tango</span>
+		</a>
+		<ul class="side-menu top">
+			<li class="active">
+				<a href="{%url 'admin-dashboard'%}">
+					<i class='bx bxs-dashboard' ></i>
+					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			 <li>
+				 <a href="{%url 'view_doctor' %}">
+					<i class='bx bxs-first-aid' ></i>
+					<span class="text">View Doctors</span>
+				</a> 
+			
+			</li> 
+			<li>
+				<a href="{%url 'add_doctor' %}">
+				   <i class='bx bxs-user-plus' ></i>
+				   <span class="text">Add Doctors</span>
+			   </a> 
+		   
+		   </li> 
+			
+			<li>
+				<a href="{%url 'view_patient' %}">
+					<i class='bx bxs-user' ></i>
+					<span class="text">Patients</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'add_patient' %}">
+					<i class='bx bxs-user-plus' ></i>
+					<span class="text">Add Patients</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'view_appointment' %}">
+					<i class='bx bx-notepad' ></i>
+					<span class="text">Appointments</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'add_appointment' %}">
+					<i class='bx bx-notepad' ></i>
+					<span class="text">Add appointments</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="side-menu">
+			<li>
+				<a href="{%url 'logout' %}" class="logout">
+					<i class='bx bxs-log-out' ></i>
+					<span class="text">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<!-- SIDEBAR -->
+
+
+
+	<!-- CONTENT -->
+	<section id="content">
+		<!-- NAVBAR -->
+		<nav>
+			
+			<a href="{% url 'admin-page' %}" class="profile">
+				<img src="{% static 'styles/img/people.png' %}">
+			</a>
+		</nav>
+		<!-- NAVBAR -->
+<div class="container">
+    <h2 class="text-center"><b>Add Doctors</b></h2>
+    <form method="POST">
+        {% csrf_token %}
+		{% for fm in form %}
+		<div class="formlabels">
+			{{fm.label_tag}} {{fm}} <small class = "text-danger" id="errortext">{{fm.errors|striptags}}</small>
+		  </div>
+		  {% endfor %}
+        {% comment %} <label>Doctor Name</label>
+        <input type="text" class="form-control" name="name"/>
+        <label>Phone_Num</label>
+        <input type="text" class="form-control" name="phone"/>
+        <label>Special</label>
+        <input type="text" class="form-control" name="special"/> {% endcomment %}
+
+        <input type="Submit" value="Submit" class="form-control btn btn-primary"/>
+		{% if messages %}
+		{% for message in messages %}
+		<br>
+			<p {% if message.tags %} class="alert {{message.tags}} mb-5 text-center" {% endif %}>{{message}}</p>
+		{% endfor %}
+		{% endif %}
+
+    
+    </form>
+
+</div>
+
+{% endblock content %}

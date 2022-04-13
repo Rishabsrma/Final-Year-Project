@@ -1,0 +1,61 @@
+{% include 'base.html' %}
+{% load static %}
+
+{% block content %} 
+      
+   <div class="container">
+
+              <div class="row">
+                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                  </div>
+                </div> 
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+                  <div class="result-body">
+                    <div class="table-responsive">
+                      <table class="table widget-26">
+                        <tbody>
+                          
+                
+                          {% if searched %}
+                          <p>You searched For</p>
+                          
+                            {% for user in results %}
+                             {% if user.is_doctor %} 
+                            
+                            <tr>
+                              <td>
+                                <div class="widget-26-job-emp-img">
+                                  <img src="{{ user.profile.image.url }}" alt="Doctor" />
+                                </div>
+                              </td>
+                              <td>
+                                <div class="widget-26-job-title">
+                                  <b>{{ user.username }}</b>
+                                  <button type="button" class="btn btn-dark"><a href="#">Profile</button>
+                              </td>
+                                 {% endif %} 
+                              </td>
+                            </tr>
+                            
+                            {% endfor %}
+                          {% else %}
+                          {% if user.is_not_is_doctor %} 
+                          <h2>Not found</h2>
+                          {% endif %}
+                          {% endif %}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+                </div>
+                </div>
+                
+                  </div>
+                
+                </section>
+                </div>
+
+
+{% endblock content %}

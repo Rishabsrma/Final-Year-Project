@@ -1,0 +1,59 @@
+{% load static %}
+{% block content %} 
+{% load crispy_forms_tags %}
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="{% static 'styles/css/profile.css' %}">
+<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+  
+   <div class="container">
+    <div class="card">
+        <div class="form">
+            <div class="left-side">
+                <div class="top-div">
+                    <h2>Profile</h2> <span></span>
+                </div>
+                <div class="medium-div">
+                    <h1>{{request.user}}</h1>
+                    <p>{{ user.profile.bio }}</p>
+                    {% if request.user.is_admin %}
+                    <p>Currently working with Agenttango</a></p>
+                    <p>as a concept trainee.</p>
+                    {% endif %}
+                    {% if request.user.is_patient %}
+                    <p>A Patient here at Agenttango.</a></p>
+                    {% endif %}
+                    {% if request.user.is_doctor%}
+                    <p>A Doctor here at Agenttango.</a></p>
+                    {% endif %}
+                    <li class="d-grid"><a href="{% url 'passwordchange' %}" class="btn btn-info"><b>Change Password</b></a></li>
+                    <li class="d-grid"><a href="{% url 'logout' %}" class="btn btn-info"><b>Logout</b></a></li>
+                    {% if request.user.is_doctor %}
+                    <li class="d-grid"><a href="{% url 'home' %}" class="btn btn-info"><b>Back</b></a></li>
+                    {% endif %}
+                    {% if request.user.is_patient %}
+                    <li class="d-grid"><a href="{% url 'home' %}" class="btn btn-info"><b>Go Back</b></a></li>
+                    {% endif %}
+                    <li class="d-grid"><a href="{% url 'update_profile' %}" class="btn btn-info"><b>Update Profile</b></a></li>
+                    {% if request.user.is_admin %}
+                    <li class="d-grid"><a href="{% url 'admin-dashboard' %}" class="btn btn-info"><b>Go back to Admin page</b></a></li>
+                    {% endif %}
+                    
+                </div>
+                
+                <div class="last-div">  
+                    <p>Agent</p>
+                    <div class="hexa"> <span class="hexagonal"> <small></small> <small></small> <small></small> </span>
+                        <p>Tango</p>
+                    </div>
+                    <p>HealthCare</p> 
+                </div>
+            </div>
+            <div class="right-side"> <img src="{{ user.profile.image.url }}"> </div>
+        </div>
+    </div>
+      
+    </div>   
+   
+   
+{% endblock content %}

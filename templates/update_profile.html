@@ -1,0 +1,47 @@
+{% load static %}
+{% block content %} 
+{% load crispy_forms_tags %}
+<link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
+<link rel="stylesheet" type="text/css" href="{% static 'styles/css/profile.css' %}"> 
+<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+                      
+<div class="container">
+    <div class="card">
+        <div class="form">
+            <div class="left-side">
+                <div class="top-div">
+                    <h2>Update Profile</h2> <span></span>
+                </div>
+                {% if request.user.is_doctor %}
+                <button type="button" > <a href="{% url 'profile' %}" class="btn btn-info">Back</button></a>
+                    {% endif %}
+                    {% if request.user.is_patient %}
+                    <button type="button" > <a href="{% url 'home' %}" class="btn btn-info">Back</button></a>
+                        {% endif %}    
+                {% if request.user.is_admin %}
+                <button type="button" > <a href="{% url 'admin-dashboard' %}" class="btn btn-info">Back</button></a>
+                    {% endif %}
+                
+                <div class="medium-div">
+                         <form method="POST" enctype="multipart/form-data">
+                             {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Profile Info</legend><br>
+                                  {{ u_form|crispy }}
+                                  {{ p_form|crispy }}
+                                    </fieldset>
+                                    <div class="form-group">
+                                        <button class="btn btn-outline-info" type="submit">Update</button>
+                                        </div>
+                                    </form>
+                                    
+                                
+                            </div>   
+                        </div> 
+                        <div class="right-side"> <img src="{{ user.profile.image.url }}"> </div>
+                    </div> 
+                    
+                </div>             
+                				            				              
+                {% endblock content %}                
