@@ -7,6 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
 <link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
 <script src="{% static 'styles/js/script.js' %}"></script>
+
  {% comment %} {% ifequal error "no" %} 
 <script>
     alert('Record saved successfully');
@@ -20,69 +21,75 @@
 </script>
 {% endifequal %}          {% endcomment %}
 
-	<!-- SIDEBAR -->
-	<section id="sidebar">
-		<a href="{%url 'admin-dashboard'%}" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">Agent Tango</span>
-		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="{%url 'admin-dashboard'%}">
-					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			 <li>
-				 <a href="{%url 'view_doctor' %}">
-					<i class='bx bxs-first-aid' ></i>
-					<span class="text">View Doctors</span>
-				</a> 
-			
-			</li> 
-			<li>
-				<a href="{%url 'add_doctor' %}">
-				   <i class='bx bxs-user-plus' ></i>
-				   <span class="text">Add Doctors</span>
-			   </a> 
-		   
-		   </li> 
-			
-			<li>
-				<a href="{%url 'view_patient' %}">
-					<i class='bx bxs-user' ></i>
-					<span class="text">Patients</span>
-				</a>
-			</li>
-			<li>
-				<a href="{%url 'add_patient' %}">
-					<i class='bx bxs-user-plus' ></i>
-					<span class="text">Add Patients</span>
-				</a>
-			</li>
-			<li>
-				<a href="{%url 'view_appointment' %}">
-					<i class='bx bx-notepad' ></i>
-					<span class="text">Appointments</span>
-				</a>
-			</li>
-			<li>
-				<a href="{%url 'add_appointment' %}">
-					<i class='bx bx-notepad' ></i>
-					<span class="text">Add appointments</span>
-				</a>
-			</li>
-		</ul>
-		<ul class="side-menu">
-			<li>
-				<a href="{%url 'logout' %}" class="logout">
-					<i class='bx bxs-log-out' ></i>
-					<span class="text">Logout</span>
-				</a>
-			</li>
-		</ul>
-	</section>
-	<!-- SIDEBAR -->
+<!-- SIDEBAR -->
+<section id="sidebar">
+	<a href="{%url 'admin-dashboard'%}" class="brand">
+		<i class='bx bxs-smile'></i>
+		<span class="text">Agent Tango</span>
+	</a>
+	<ul class="side-menu top">
+		<li>
+			<a href="{%url 'admin-dashboard'%}">
+				<i class='bx bxs-dashboard' ></i>
+				<span class="text">Dashboard</span>
+			</a>
+		</li>
+		<li>
+			<a href="{%url 'manage-appointments'%}">
+				<i class='bx bxs-user-detail' ></i>
+				<span class="text">Manage Appointments</span>
+			</a>
+		</li>
+		 <li>
+			 <a href="{%url 'view_doctor' %}">
+				<i class='bx bxs-first-aid' ></i>
+				<span class="text">View Doctors</span>
+			</a> 
+		
+		</li> 
+		<li>
+			<a href="{%url 'add_doctor' %}">
+			   <i class='bx bxs-user-plus' ></i>
+			   <span class="text">Add Doctors</span>
+		   </a> 
+	   
+	   </li> 
+		
+		<li>
+			<a href="{%url 'view_patient' %}">
+				<i class='bx bxs-user' ></i>
+				<span class="text">Patients</span>
+			</a>
+		</li>
+		<li>
+			<a href="{%url 'add_patient' %}">
+				<i class='bx bxs-user-plus' ></i>
+				<span class="text">Add Patients</span>
+			</a>
+		</li>
+		<li>
+			<a href="{%url 'view_appointment' %}">
+				<i class='bx bx-notepad' ></i>
+				<span class="text">Appointments</span>
+			</a>
+		</li>
+		<li>
+			<a href="{%url 'add_appointment' %}">
+				<i class='bx bx-notepad' ></i>
+				<span class="text">Add appointments</span>
+			</a>
+		</li>
+	</ul>
+	<ul class="side-menu">
+		<li>
+			<a href="{%url 'logout' %}" class="logout">
+				<i class='bx bxs-log-out' ></i>
+				<span class="text">Logout</span>
+			</a>
+		</li>
+	</ul>
+</section>
+<!-- SIDEBAR -->
 
 
 

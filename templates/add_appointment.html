@@ -7,6 +7,9 @@
 <link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
 <link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
 <script src="{% static 'styles/js/script.js' %}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
 {% comment %} {% ifequal error "no" %} 
 <script>
     alert('Record saved successfully');
@@ -31,6 +34,12 @@
 				<a href="{%url 'admin-dashboard'%}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'manage-appointments'%}">
+					<i class='bx bxs-user-detail' ></i>
+					<span class="text">Manage Appointments</span>
 				</a>
 			</li>
 			 <li>
@@ -85,7 +94,6 @@
 	<!-- SIDEBAR -->
 
 
-
 	<!-- CONTENT -->
 	<section id="content">
 		<!-- NAVBAR -->
@@ -94,6 +102,13 @@
 			<a href="{% url 'admin-page' %}" class="profile">
 				<img src="{% static 'styles/img/people.png' %}">
 			</a>
+						<li class="nav-item" role="presentation">
+				<a href="{% url 'manage-appointments' %}" style="float: left;cursor:pointer;" aria-expanded="true" title="You Have {{count}} New Appointments">
+				  <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
+				  </i>
+			  </a>
+			  <span class="badge badge-danger">{{count}}</span>
+			</li>
 		</nav>
 		<!-- NAVBAR -->
 

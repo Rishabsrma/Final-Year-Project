@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
 	<script src="{% static 'styles/js/script.js' %}"></script>
 	<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+	<link href="{% static 'styles1/css/bootstrap.min.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 	<title>AdminHub</title>
 </head>
@@ -25,10 +27,16 @@
 			<span class="text">Agent Tango</span>
 		</a>
 		<ul class="side-menu top">
-			<li class="active">
+			<li>
 				<a href="{%url 'admin-dashboard'%}">
 					<i class='bx bxs-dashboard' ></i>
 					<span class="text">Dashboard</span>
+				</a>
+			</li>
+			<li>
+				<a href="{%url 'manage-appointments'%}">
+					<i class='bx bxs-user-detail' ></i>
+					<span class="text">Manage Appointments</span>
 				</a>
 			</li>
 			 <li>
@@ -92,6 +100,13 @@
 			<a href="{% url 'admin-page' %}" class="profile">
 				<img src="{% static 'styles/img/people.png' %}">
 			</a>
+			<li class="nav-item" role="presentation">
+				<a href="{% url 'manage-appointments' %}" style="float: left;cursor:pointer;" aria-expanded="true" title="You Have {{count}} New Appointments">
+				  <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
+				  </i>
+			  </a>
+			  <span class="badge badge-danger">{{count}}</span>
+			</li>
 		</nav>
 		<!-- NAVBAR -->
 
@@ -153,41 +168,41 @@
 							<tr>
 								<td>
 									<img src="{% static 'styles/img/people.png' %}">
-									<p>Raj</p>
+									<p>Jeevan</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>09-05-2022</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 							<tr>
 								<td>
 									<img src="{% static 'styles/img/people.png' %}">
-									<p>Rajat</p>
+									<p>Jeevan</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>03-25-2022</td>
 								<td><span class="status pending">Pending</span></td>
 							</tr>
 							<tr>
 								<td>
 									<img src="{% static 'styles/img/people.png' %}">
-									<p>Manish</p>
+									<p>Jeevan</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>10-10-2022</td>
 								<td><span class="status process">Process</span></td>
 							</tr>
 							<tr>
 								<td>
 									<img src="{% static 'styles/img/people.png' %}">
-									<p>Utsaha</p>
+									<p>Jeevan</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>12-08-2022</td>
 								<td><span class="status pending">Pending</span></td>
 							</tr>
 							<tr>
 								<td>
 									<img src="{% static 'styles/img/people.png' %}">
-									<p>Parisha</p>
+									<p>Jeevan</p>
 								</td>
-								<td>01-10-2021</td>
+								<td>08-25-2022</td>
 								<td><span class="status completed">Completed</span></td>
 							</tr>
 						</tbody>

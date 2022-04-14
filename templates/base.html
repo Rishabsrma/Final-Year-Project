@@ -74,6 +74,12 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
         <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script> {% endcomment %}
+
+
+        <link href="{% static 'styles1/css/bootstrap.min.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="{% static 'styles1/css/styles.css' %}" />
+        <script type="text/javascript" src="{% static 'styles1/js/bootstrap.min.js' %}"></script>
         <title>Agent Tango</title>
     </head>
 
@@ -94,7 +100,7 @@
                             <ul class="ml-auto">
                             <form action="{% url 'search' %}" method="POST" class="d-flex">
                               {% csrf_token %}
-                              <input class="form-control me-2" type="text" name="searched" placeholder="Doctors" aria-label="Search">
+                              <input class="form-control me-2" type="text" name="searched" placeholder="Search" aria-label="Search">
                               <button class="btn btn-outline success" type="submit"> Search</button>
                             </form>   
                             <ul class="navbar-nav ml-auto">
@@ -104,6 +110,7 @@
                                 <li class="nav-item"> <a class="nav-link" href="{% url 'services' %}">Services</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="{% url 'doctors' %}">Doctors</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="{% url 'faq' %}">FAQs</a> </li>
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'patient-appointment' %}">Make an appointment</a> </li>
                               </ul>
                               {% endif %}
                               {% if request.user.is_authenticated %}

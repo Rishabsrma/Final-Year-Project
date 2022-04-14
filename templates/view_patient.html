@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 <link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
 
+
 <script>
                 $(document).ready(function() {
                   $('#example').DataTable( {
@@ -44,10 +45,16 @@
 		<span class="text">Agent Tango</span>
 	</a>
 	<ul class="side-menu top">
-		<li class="active">
+		<li>
 			<a href="{%url 'admin-dashboard'%}">
 				<i class='bx bxs-dashboard' ></i>
 				<span class="text">Dashboard</span>
+			</a>
+		</li>
+		<li>
+			<a href="{%url 'manage-appointments'%}">
+				<i class='bx bxs-user-detail' ></i>
+				<span class="text">Manage Appointments</span>
 			</a>
 		</li>
 		 <li>
