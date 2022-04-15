@@ -2,7 +2,7 @@
 
 {% load static %}
 {% block content %}  
- {% comment %} <section id="home" class="d-flex align-items-center">
+  <section id="home" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to Agent <br> Tango Healthcare</h1>
       <h2>We are team of Specialized Doctors.<br>"Your devotion and care bring healing, comfort and hope."</h2>
@@ -10,9 +10,9 @@
     </div>
   </section><!-- End Home -->
 <br><br><br><br><br><br><br><br>
-  <main id="main"> {% endcomment %}
+  <main id="main"> 
     
-    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    {% comment %} <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
@@ -49,7 +49,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </button>
-    </div>
+    </div> {% endcomment %}
     <!-- ======= Featured Services Section ======= -->
     <section id="featured-services" class="featured-services">
       <div class="container" data-aos="fade-up">
@@ -58,8 +58,8 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
-              <h4 class="title"><a href=""> Normal checkup</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti 2 times per month quas molestias excepturi</p>
+              <h4 class="title"><a href=""> Regular checkup</a></h4>
+              <p class="description">Regular check-ups can help find potential health issues before they become a problem. When you see your doctor regularly, they are able to detect health conditions or diseases early.</p>
             </div>
           </div>
 
@@ -67,7 +67,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
               <div class="icon"><i class="fas fa-dna"></i></div>
               <h4 class="title"><a href="">Blood Test</a></h4>
-              <p class="description">At vero eos et accusamus et 1 week odio dignissimos ducimus qui blanditiis</p>
+              <p class="description">Regular blood testing is one of the most important ways to keep track of your overall physical well-being. Getting tested at routine intervals can allow you to see the way your body changes over time and empower you to make informed decisions about your health.</p>
             </div>
           </div>
           
@@ -75,7 +75,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
               <div class="icon"><i class="fas fa-temperature-high"></i></div>
               <h4 class="title"><a href="">Body temperature</a></h4>
-              <p class="description">Excepteur sint occaecat 37.6 non proident, 98.6 sunt in culpa qui officia</p>
+              <p class="description">The measurement of body temperature can help detect illness. It can also monitor whether or not treatment is working. A high temperature is a fever.</p>
             </div>
           </div>
 
@@ -83,7 +83,7 @@
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="fas fa-hand-holding-medical"></i></div>
               <h4 class="title"><a href="">Medicine use</a></h4>
-              <p class="description">Duis aute dolor 10-12 in reprehenderit in voluptate 8-12 velit esse cillum dolore</p>
+              <p class="description">Medicines can help control things like high blood pressure (hypertension) or high cholesterol. These drugs don't cure the underlying problem, but they can help prevent some of its body-damaging effects over time.</p>
             </div>
           </div>
 
@@ -116,7 +116,7 @@
               </div>
             </div>
           </div>
-  
+          {% if request.user.is_authenticated %}
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -128,18 +128,17 @@
             </ul>
           </div>
   
-          <!-- <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Extra Web Course</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Navbar Tutorial</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/patient-appointment">Make appointments</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/faq">FAQs</a></li>
+
             </ul>
           </div>
+          {% endif %}
   
-          <div class="col-lg-4 col-md-6 footer-newsletter">
+          <!--<div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
             <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">

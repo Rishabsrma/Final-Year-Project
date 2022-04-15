@@ -17,16 +17,18 @@ from django.contrib.auth.decorators import login_required
 def About(request):
     return render(request, 'about.html')
 
+
 def Home(request):
-    return render(request, 'index.html')    
+    return render(request, 'index.html')  
+
 
 def Navbar(request):
     return render(request, 'navbar.html')    
 
+
 def AdminDashboard(request):
     return render(request, 'admin-dashboard.html') 
 
-@login_required
 def AdminPage(request):
     return render(request, 'admin_page.html')     
 
