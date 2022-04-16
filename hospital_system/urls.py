@@ -1,5 +1,5 @@
 from django.urls import path
-from hospital_system.views import About,Home,Navbar,Services,Doctors,Contact_view,Profile,UpdateProfile,AdminDashboard,AdminPage,View_Doctor,Delete_Doctor,Delete_Patient,Add_Doctor,View_Patient,Add_Patient,Add_Appointment,Delete_Appointment,View_Appointment
+from hospital_system.views import About,Home,Navbar,Services,Contact_view,Profile,UpdateProfile,AdminDashboard,AdminPage,View_Doctor,Delete_Doctor,Delete_Patient,Add_Doctor,View_Patient,Add_Patient,Add_Appointment,Delete_Appointment,View_Appointment
 from . import views
 from django.contrib.auth import views as auth_views
 from .forms import  MyPasswordChangeForm, MyPasswordResetForm, MySetPasswordForm
@@ -10,7 +10,6 @@ urlpatterns = [
     path('navbar/', Navbar,name='navbar'),
     path('contact/', Contact_view,name='contact'),
     path('services/', Services,name='services'),
-    path('doctors/', Doctors,name='doctors'),
     path('profile/', Profile,name='profile'),
     path('update_profile/', UpdateProfile,name='update_profile'),
     path('admin-dashboard/', AdminDashboard,name='admin-dashboard'),

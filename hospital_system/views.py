@@ -80,8 +80,7 @@ def Contact_view(request):
 def Services(request):
     return render(request, 'services.html')    
 
-def Doctors(request):
-    return render(request, 'doctors.html') 
+
       
 @login_required
 def Profile(request):
