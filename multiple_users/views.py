@@ -62,28 +62,29 @@ def admin(request):
     return render(request,'admin-dashboard.html')
 
 
-# def doctor(request):
-#     return render(request,'profile.html')
-
-
-# def patient(request):
-#     return render(request,'profile.html')
-
 class Patient_AppointmentView(TemplateView):
-    template_name = 'patient_appointment.html'
-
+    def get(self,request):
+        pp = Patient_Appointment.objects.values_list('Department').all()
+        
+        ppsort = sorted(list(set([a.strip() for lang in pp for a in lang])))
+        print(ppsort)
+        return render(request,'patient_appointment.html',{'ppsort':ppsort})
+    
+    
     def post(self, request):
         fname = request.POST.get('fname')
         lname = request.POST.get('lname')
         email = request.POST.get('email')
         mobile = request.POST.get('mobile')
         message = request.POST.get('request')
+        department = request.POST.get('special')
 
         appointment = Patient_Appointment.objects.create(
             first_name=fname,
             last_name=lname,
             email=email,
             phone=mobile,
+            Department=department,
             request=message,
         )
 
@@ -139,3 +140,8 @@ class ManageAppointmentView(ListView):
             "title":"Manage Appointments"          
         })
         return context
+
+# def Appointment_view(request):
+#     context = {}
+#     context['form'] = Patient_Appointent()
+#     return render( request, "patient-appointment.html", context)

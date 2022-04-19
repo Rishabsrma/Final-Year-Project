@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'multiple_users.apps.MultipleUsersConfig',
     'hospital_system.apps.HospitalSystemConfig',
     'crispy_forms',
+    'multiselectfield',
 ]
 
 MIDDLEWARE = [
@@ -155,10 +156,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'multiple_users.User'
 
-# #Sending emails
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = "smtp.gmail.com"
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = config("EADDRESS")
-# EMAIL_HOST_PASSWORD = config("EPASSWORD")
+#Sending emails
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = config("EADDRESS")
+EMAIL_HOST_PASSWORD = config("EPASSWORD")

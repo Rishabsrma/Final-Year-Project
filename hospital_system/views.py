@@ -203,29 +203,7 @@ class Add_Doctor(View):
             # messages.success(request, 'Added Successfully')
             return redirect('view_doctor')
         return render(request,'add_doctor.html',{'form':form})      
-
-# class CustomerRegistrationView(View):
-#     def get(self, request):
-#         form = CustomerRegistrationForms()
-#         return render(request,'signup.html',{'forms':form})
-
-#     def post(self,request):
-#         form = CustomerRegistrationForms(request.POST)
-#         if form.is_valid():
-#             messages.success(request,'You have been succesfully registered!')
-#             form.save()
-#         return render(request,'signup.html',{'forms':form}) 
-
-# def search_Bar(request):
-#     if request.method == 'GET':
-#         query = request.GET.get('query')
-#         if query:
-#             searched = Doctor.objects.filter(Name__icontains=query)
-#             return render(request,'searchbar.html', {'searched':searched})
-#         else:
-#             print("No information to show")
-#             return request(request, 'searchbar.html', {})  
- 
+        
 def search_Bar(request):
     if request.method == "POST":
         searched = request.POST['searched']

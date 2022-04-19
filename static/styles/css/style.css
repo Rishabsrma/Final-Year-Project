@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #ffffff;
+  color: #000000;
   border-color: #1977cc;
 }
 

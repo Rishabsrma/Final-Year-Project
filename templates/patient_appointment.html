@@ -65,6 +65,19 @@
                                 <textarea type="text" id="ans" name="request" placeholder="" onblur="validate(6)"></textarea> 
                             </div>
                         </div>
+
+                        <select name="special" class="custom-select mx-1" id="Genre-filter" style="border-radius: 5px;">
+                          <option selected="selected" disabled>Department</option>
+                          
+                          {% if ppsort %}
+                              {% for speciality in ppsort %}
+                                <option id="mouse-filter" value={{speciality}}>{{speciality}}</option>
+                              {% endfor %}
+                          {% endif %}
+                        </select>
+                        {% comment %} <div class="form-group">
+                          {% render_field Patient_AppointmentForm.Department class="form-control" placeholder="Department" %}
+                        </div> {% endcomment %}
                         <div class="row justify-content-end">
                             <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Send</button> </div>
                         </div>
