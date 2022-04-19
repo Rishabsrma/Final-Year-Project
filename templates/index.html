@@ -11,6 +11,15 @@
       <a href="{% url 'about' %}" class="btn-get-started scrollto">Learn More</a>
       {% endif %}
     </div>
+    {% if request.user.is_patient %}
+      <div class="icon-box">
+        <div class="icon- btn btn-info"><i class="bx bxs-microphone"></i></div>
+        <a href="{% url 'about' %}" <button type="button" class="btn btn-info">Voice Assistant</button></a>
+        {% endif %}
+        
+      </div>
+
+
   </section><!-- End Home -->
 <br><br><br><br><br><br><br><br> 
 
