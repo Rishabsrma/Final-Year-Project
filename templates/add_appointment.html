@@ -111,6 +111,11 @@
 			</li>
 		</nav>
 		<!-- NAVBAR -->
+		{% if messages %}
+		{% for message in messages %}
+		 <p {% if message.tags %} class="alert {{message.tags}} mb-2 text-center" {% endif %}>{{message}}</p>
+		{% endfor %}
+		{% endif %} 
 
  <div class="container">
 	<h2 class="text-center"><b>Add Appointment</b></h2>
@@ -142,12 +147,6 @@
 		{% endfor %}
         <input type="submit" value="Submit" class="form-control btn btn-primary"/>   
    	     </form>
-			{% if messages %}
-			{% for message in messages %}
-			<br>
-				<p {% if message.tags %} class="alert {{message.tags}} mb-5 text-center" {% endif %}>{{message}}</p>
-			{% endfor %}
-			{% endif %}
 
 </div>
 

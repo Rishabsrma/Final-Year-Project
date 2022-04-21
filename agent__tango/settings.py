@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SK")
+SECRET_KEY = "django-insecure-5ej3#9d+!ch_((s3li9qc9-b$7i7pnyzct1q%x*6h+rx*j(m(+"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -143,10 +143,12 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = ('/media/')
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MESSAGE_TAGS = {
-    messages.ERROR: 'danger'
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'alert-success',
+    messages.INFO: 'alert-info'
 }
 
 # Default primary key field type
@@ -158,8 +160,10 @@ AUTH_USER_MODEL = 'multiple_users.User'
 
 #Sending emails
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = config("EADDRESS")
-EMAIL_HOST_PASSWORD = config("EPASSWORD")
+# EMAIL_HOST_USER = config("EADDRESS")
+# EMAIL_HOST_PASSWORD = config("EPASSWORD")
+EMAIL_HOST_USER = 'agenttangoo@gmail.com'
+EMAIL_HOST_PASSWORD = 'valorant123'

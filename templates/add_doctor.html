@@ -103,6 +103,12 @@
 			</a>
 		</nav>
 		<!-- NAVBAR -->
+		{% if messages %}
+		{% for message in messages %}
+		 <p {% if message.tags %} class="alert {{message.tags}} mb-2 text-center" {% endif %}>{{message}}</p>
+		{% endfor %}
+		{% endif %} 
+
 <div class="container">
     <h2 class="text-center"><b>Add Doctors</b></h2>
     <form method="POST">
@@ -120,12 +126,6 @@
         <input type="text" class="form-control" name="special"/> {% endcomment %}
 
         <input type="Submit" value="Submit" class="form-control btn btn-primary"/>
-		{% if messages %}
-		{% for message in messages %}
-		<br>
-			<p {% if message.tags %} class="alert {{message.tags}} mb-5 text-center" {% endif %}>{{message}}</p>
-		{% endfor %}
-		{% endif %}
 
     
     </form>

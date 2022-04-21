@@ -120,7 +120,7 @@ def View_Doctor(request):
     return render(request, 'view_doctor.html', d)
 
 @login_required
-def Delete_Doctor(request, pid):
+def Delete_Doctor(request, pid): 
     if not request.user.is_admin:
         return redirect('login_view')
     doctor = Doctor.objects.get(id=pid) 
@@ -200,8 +200,8 @@ class Add_Doctor(View):
             Special = form.cleaned_data['Special']
             reg = Doctor(Name=Name,Phone_Num=Phone_Num,Special=Special)
             reg.save()
-            # messages.success(request, 'Added Successfully')
-            return redirect('view_doctor')
+            messages.success(request, 'Added Successfully')
+            # return redirect('view_doctor')
         return render(request,'add_doctor.html',{'form':form})      
         
 def search_Bar(request):
@@ -241,8 +241,8 @@ class Add_Patient(View):
             Address = form.cleaned_data['Address']
             reg = Patient(Name=Name,Gender=Gender,Phone_Num=Phone_Num,Address=Address)
             reg.save()
-            # messages.success(request, 'Added Successfully')
-            return redirect('view_patient')
+            messages.success(request, 'Added Successfully')
+            # return redirect('view_patient')
         return render(request,'add_patient.html',{'form':form})
 
 
@@ -261,8 +261,8 @@ class Add_Appointment(View):
             Time = form.cleaned_data['Time']
             reg = Appointment(Doctor=Doctor,Patient=Patient,Date=Date,Time=Time)
             reg.save()
-            # messages.success(request, 'Added Successfully')
-            return redirect('view_appointment')
+            messages.success(request, 'Added Successfully')
+            # return redirect('view_appointment')
         return render(request,'add_appointment.html',{'form':form})  
 
 def View_Appointment(request):

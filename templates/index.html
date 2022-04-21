@@ -13,8 +13,9 @@
     </div>
     {% if request.user.is_patient %}
       <div class="icon-box">
-        <div class="icon- btn btn-info"><i class="bx bxs-microphone"></i></div>
-        <a href="{% url 'about' %}" <button type="button" class="btn btn-info">Voice Assistant</button></a>
+      
+       <div class="icon- btn btn-info"><button onclick="location.href='{% url 'voice_assistant' %}'">Voice assistant</button><hr> <i class="bx bxs-microphone"></i></div>
+  
         {% endif %}
         
       </div>
