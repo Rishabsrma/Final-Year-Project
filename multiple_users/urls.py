@@ -12,4 +12,5 @@ urlpatterns = [
     path('patient-appointment/',Patient_AppointmentView.as_view(), name='patient-appointment'),
     path('manage-appointments/',ManageAppointmentView.as_view(), name='manage-appointments'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login_view'),name='logout'),
+    # path('doctor_list/', views.doctor_list, name='doctor_list'),
 ]

@@ -169,19 +169,19 @@ def output(request):
     SERVICE = authenticate_google()
     print("Start")
 
-    # def wikipedia(get_audio):
-    #     while True:
-    #     # if 1:
-    #         query = get_audio().lower() #Converting user query into lower case
+    def wikipedia(get_audio):
+        while True:
+        # if 1:
+            query = get_audio().lower() #Converting user query into lower case
 
-    #         # Logic for executing tasks based on query
-    #         if 'wikipedia' in query:  #if wikipedia found in the query then this block will be executed
-    #             speak('Searching Wikipedia...')
-    #             query = query.replace("wikipedia", "")
-    #             results = wikipedia.summary(query, sentences=2) 
-    #             speak("According to Wikipedia")
-    #             print(results)
-    #             speak(results)
+            # Logic for executing tasks based on query
+            if 'wikipedia' in query:  #if wikipedia found in the query then this block will be executed
+                speak('Searching Wikipedia...')
+                query = query.replace("wikipedia", "")
+                results = wikipedia.summary(query, sentences=2) 
+                speak("According to Wikipedia")
+                print(results)
+                speak(results)
     while True:
         print("Listening")
         text = get_audio()

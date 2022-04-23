@@ -60,21 +60,7 @@ def Contact_view(request):
             contact.save()
             messages.success(request, "Your message has been successfully sent")
     return render(request, 'contact.html')
-
-# def login_view(request):
-#     if request.method == 'POST':
-#         form = AuthenticationForm(data=request.POST)  
-#         if form.is_valid():
-#             user=form.get_user()
-#             login(request, user)
-#             if'next'in request.POST:
-#                 return redirect(request.POST.get('next'))
-#             else:
-
-#                 return redirect('login_admin')     
-#     else:
-#         form = AuthenticationForm()
-#     return render(request, 'login_admin.html', {'form':form})  
+ 
 
 @login_required
 def Services(request):
@@ -117,7 +103,7 @@ def View_Doctor(request):
         return redirect('login_view')
     doc = Doctor.objects.all()   
     d = {'doc': doc}
-    return render(request, 'view_doctor.html', d)
+    return render(request, 'view_doctor.html', d)   
 
 @login_required
 def Delete_Doctor(request, pid): 

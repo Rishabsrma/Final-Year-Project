@@ -141,7 +141,5 @@ class ManageAppointmentView(ListView):
         })
         return context
 
-# def Appointment_view(request):
-#     context = {}
-#     context['form'] = Patient_Appointent()
-#     return render( request, "patient-appointment.html", context)
+# def doctor_list(request):
+#     return render(request,'view_doctors.html')
