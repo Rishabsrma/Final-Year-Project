@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm
 from django.contrib.auth import authenticate, login
 from django.views.generic import TemplateView
-from hospital_system.models import Contact
+from hospital_system.models import Contact,Doctor
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from multiple_users.models import Patient_Appointment
@@ -141,5 +141,6 @@ class ManageAppointmentView(ListView):
         })
         return context
 
-# def doctor_list(request):
-#     return render(request,'view_doctors.html')
+def doctor_list(request):
+    doc = Doctor.objects.all()
+    return render(request,'doctors.html',{'doc':doc})

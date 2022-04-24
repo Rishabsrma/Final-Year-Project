@@ -3,22 +3,12 @@
 
 {% block content %}
 
-    {% comment %} {% if messages %}
-    <div class="card notification-card notification-invitation">
-        <div class="card-body">
-        {% for message in messages %}
-                <div class="card-title">{{message}} </div>
-            {% endfor %}
-        </div>
-      </div> 
-    {% endif %} {% endcomment %}
-    {% comment %} <li class="nav-item" role="presentation">
-      <a href="{% url 'manage-appointments' %}" style="float: left;cursor:pointer;" aria-expanded="true" title="You Have {{count}} New Appointments">
-        <i class="far fa-bell" style="font-size: 20px; float: left; color: black">
+     {% comment %} <li class="nav-item" role="presentation">
+      <a href="{% url 'myappointments' %}" class="btn" style="float: left;cursor:pointer;"aria-expanded="true">My Previous Appointments
+        <i class="far fa fa-book" style="font-size: 20px; float: left; color: black">
         </i>
       </a>
-      <span class="badge badge-danger">{{count}}</span>
-    </li> {% endcomment %}
+    </li>  {% endcomment %}
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">

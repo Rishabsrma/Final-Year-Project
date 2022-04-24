@@ -1,0 +1,45 @@
+{% include 'base.html' %}
+{% load static %}
+<link rel="icon" type="image/png" href="{% static 'styles/img/icons/favicon.ico' %}">
+
+   
+{% block content %}
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/css/style1.css' %}">
+<script src="{% static 'styles/js/script.js' %}"></script>
+
+<title>AdminHub</title>
+</head>
+<body>
+
+		<!-- NAVBAR -->
+		{% if messages %}
+		{% for message in messages %}
+		 <p {% if message.tags %} class="alert {{message.tags}} mb-2 text-center" {% endif %}>{{message}}</p>
+		{% endfor %}
+		{% endif %}
+    <div class="section-title">
+        <h2 class="text-center">All Doctors</h2>
+      </div>
+    <table id="example" class="table table-hover">
+        <thead> 
+            <tr>
+                <th>Doctor Id</th>
+                <th>Name</th>
+                <th>Phone_Num</th>
+                <th>Special</th>
+            </tr>  
+        </thead>   
+        <tbody>
+           {% for i in doc %}
+           <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.Name}}</td>
+                <td>{{i.Phone_Num}}</td>
+                <td>{{i.Special}}</td>
+           </tr>    
+           {% endfor %}
+        </tbody>         
+    </table>
+</div>
+{% endblock content %}

@@ -90,9 +90,8 @@
             {% endfor %}
             {% endif %} 
     <body>
-           <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
+            
+                
                     {% comment %} <nav class="navbar navbar-expand-sm navbar-light" style="background-color:#1E9BE4"> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="navbar-toggler-icon"></span> </button> 
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                             <ul class="navbar-nav">
@@ -161,7 +160,7 @@
                                          
                                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                               <!-- Navbar brand -->
-                                              <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                                              <a class="navbar-brand mt-2 mt-lg-0"  href="{% url 'home' %}">
                                                 <img
                                                   src="{% static 'styles/img/logo1.png' %}"
                                                   height="60"
@@ -172,29 +171,28 @@
                                               
                                               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                                 <li class="nav-item">
-                                                  <a class="nav-link" style="font-size: 17px;" href="{% url 'home' %}">Home</a>
+                                                  <a class="nav-link" style="font-size: 15px; color: white" href="{% url 'home' %}">Home</a>
                                                 </li>
                                               
                                                 {% if request.user.is_patient %} 
                                                 <li class="nav-item">
-                                                  <a class="nav-link" style="font-size: 17px;"href="{% url 'about' %}">About Us</a>
+                                                  <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'about' %}">About Us</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                  <a class="nav-link" style="font-size: 17px;"href="{% url 'contact' %}">Contact Us</a>
+                                                  <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'contact' %}">Contact Us</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                  <a class="nav-link" style="font-size: 17px;"href="{% url 'services' %}">Services</a>
+                                                  <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'services' %}">Services</a>
                                                 </li>
-                                                  {% comment %} <li class="nav-item">
-                                                  <a class="nav-link" style="font-size: 17px;"href="{% url 'doctor_list' %}">Doctors</a>
-                                                </li> {% endcomment %}
+                                                <li class="nav-item">
+                                                  <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'doctor_list' %}">All Doctors</a>
+                                                </li> 
                                               
                                               </ul>
                                                 {% endif %}
                                             
                                                 
-                                    
-                                              {% comment %} <ul class="mt-auto "> {% endcomment %}
+                            
                                                 
                                         
                                             </div>
@@ -202,7 +200,7 @@
                                               <form action="{% url 'search' %}" method="POST" class="d-flex">
                                               {% csrf_token %}
                                               <input class="form-control me-2" type="text" name="searched" placeholder="Search" aria-label="Search">
-                                              <button class="btn btn-outline success" type="submit">Search</button>
+                                              <button class="btn btn-outline success" type="submit" style="font-size: 17px; color: white" >Search</button>
                                             </form>  
                                           </div>                                
                                           </div>
@@ -212,16 +210,16 @@
                                                 <ul class="navbar-nav ml-auto">
                                                   {% if request.user.is_patient %} 
                                                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                                    <li class="nav-item"> <a class="nav-link" style="font-size: 17px;"href="{% url 'faq' %}">FAQs</a>
-                                                    <li class="nav-item"> <a class="nav-link" style="font-size: 17px;"href="{% url 'patient-appointment' %}">Book an appointment</a>
-                                                  </ul>
+                                                    <li class="nav-item"> <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'faq' %}">FAQs</a>
+                                                    <li class="nav-item"> <a class="nav-link" style="font-size: 15px; color: white"href="{% url 'patient-appointment' %}">Book an Appointment</a>
+                                                  </ul>  
                                                   {% endif %}
                                                   {% if request.user.is_authenticated %}
                                                 <div class="collapse navbar-collapse" id="navbar-list-4">
                                                   <ul class="navbar-nav">
                                                       <li class="nav-item dropdown">
                                                       <a class="nav-link dropdown-toggle" href="{% url 'profile' %}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <img src="{{ user.profile.image.url }}" width="35" height="35" class="rounded-circle">
+                                                        <img src="{{ user.profile.image.url }}" width="30" height="30" class="rounded-circle">
                                                         
                                                       </a>
                                                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

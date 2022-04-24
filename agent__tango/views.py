@@ -169,19 +169,6 @@ def output(request):
     SERVICE = authenticate_google()
     print("Start")
 
-    def wikipedia(get_audio):
-        while True:
-        # if 1:
-            query = get_audio().lower() #Converting user query into lower case
-
-            # Logic for executing tasks based on query
-            if 'wikipedia' in query:  #if wikipedia found in the query then this block will be executed
-                speak('Searching Wikipedia...')
-                query = query.replace("wikipedia", "")
-                results = wikipedia.summary(query, sentences=2) 
-                speak("According to Wikipedia")
-                print(results)
-                speak(results)
     while True:
         print("Listening")
         text = get_audio()
@@ -197,15 +184,12 @@ def output(request):
                     if date:
                         get_events(date, SERVICE)
                     else:
-                        speak("I don't understand")
+                        speak("Can you please refer to exact dates or days!")
 
-            NOTE_STRS = ["make a note", "write this down", "remember this", "make an appointment"]
+            NOTE_STRS = ["make a note", "write this down", "remember this", "make an appointment", "can you keep a note"]
             for phrase in NOTE_STRS:
                 if phrase in text:
-                    speak("What would you like me to write down?")
+                    speak("What do you want me to remember?")
                     note_text = get_audio()
                     note(note_text)
-                    speak("I've made a note of that.")
-
-            print( 'This is voice assistant system')
-        return render(request, 'index.html')       
+                    speak("I've made a note of that.")      

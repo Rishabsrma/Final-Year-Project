@@ -265,6 +265,3 @@ def Delete_Appointment(request, pid):
     app.delete()  
     return redirect('view_appointment')         
  
-
-# def update_data(request, id):
-#     return render(request, 'view_patient.html',)
